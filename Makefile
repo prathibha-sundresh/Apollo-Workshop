@@ -13,6 +13,8 @@ push: build
 test: build
 	bin/apollo vaildate
 
+.PHONY:
+
 .PHONY:deploy
 deploy: push
 	bin/apollo deploy -e production -m bikroy -t $(GIT_COMMIT)
