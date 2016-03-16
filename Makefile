@@ -9,6 +9,10 @@ push: build
 	docker tag prathisuni/apollo-workshop prathisuni/apollo-workshop:$(GIT_COMMIT)
 	docker push prathisuni/apollo-workshop:$(GIT_COMMIT)
 
+.PHONY: test
+test: build
+	bin/apollo vaildate
+
 .PHONY:deploy
 deploy: push
-	bin/apollo deploy -e production -m ikman -t $(GIT_COMMIT)
+	bin/apollo deploy -e production -m bikroy -t $(GIT_COMMIT)
